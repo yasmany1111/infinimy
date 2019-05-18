@@ -1,0 +1,108 @@
+div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    line-height: 48px;
+    font-size: 20px;
+    color: white;
+}
+
+div.scrollmenu a.selected {
+    background: #000000d9;
+}
+
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.managerMenuContainer {
+    z-index: 15;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.managerMenuTopBar {
+    overflow: auto;
+    width: 100%;
+    height: 48px;
+    background: #3c8490;
+}
+
+.managerMenuContent {
+    width: 100%;
+    height: calc(100% - 48px);
+}
+
+.managerMenuContentTab {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.interactionBlackScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 20;
+}
+
+.itemInteractionName {
+    color: white;
+    font-size: 23px;
+    margin-left: 10px;
+}
+
+.closeInteractionAction {
+    padding: 25px;
+    font-size: 25px;
+    color: white;
+    background: #ff000073;
+    text-align: center;
+}
+
+.itemInteractionAction {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: rgba(0, 109, 182, 0.589);
+    text-align: center;
+    color: wheat;
+}
+
+.sliderRequestText {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    float: left;
+}
+.cancelSliderRequest {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    float: left;
+    background: red;
+}
+
+.inventoryTab {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#acceptValueRequest {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: rgba(0, 0, 0, 0);
+    color: lime;
+}

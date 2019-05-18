@@ -1,0 +1,29 @@
+.quickOverlay {
+    max-height: 50%;
+    background: rgba(0, 0, 0, 0.8);
+    color: lime;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.quickOverlayType {
+    color: pink;
+    clear: both;
+}
+
+.quickOverlayInfo {
+    color: white;
+}
+
+.quickOverlayData {
+    padding: 10px;
+    clear: both;
+}
+
+.quickOverlayCloseContainer {
+    float: left;
+    font-size: 26px;
+    padding: 5px;
+}
