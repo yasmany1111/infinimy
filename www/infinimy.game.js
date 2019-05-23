@@ -938,32 +938,6 @@ function preload() {
   this.load.image("ship_1_normal", "assets/sprite/ship/built/ship_1_normal.png");
   this.load.image("ship_1_accelerate", "assets/sprite/ship/built/ship_1_accelerate.png");
 }
-},{}],"node_modules/@babel/runtime/helpers/classCallCheck.js":[function(require,module,exports) {
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-module.exports = _classCallCheck;
-},{}],"node_modules/@babel/runtime/helpers/createClass.js":[function(require,module,exports) {
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
-module.exports = _createClass;
 },{}],"src/states/update.js":[function(require,module,exports) {
 "use strict";
 
@@ -1443,11 +1417,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.GameSprite = void 0;
 
-var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var GameSprite =
 /*#__PURE__*/
@@ -1456,14 +1430,16 @@ function () {
     var x = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     var y = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
     var texture = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "";
-    (0, _classCallCheck2.default)(this, GameSprite);
+
+    _classCallCheck(this, GameSprite);
+
     this.Sprite = Game.physics.add.sprite(x, y, texture);
     this.Sprite.setOrigin(0);
     this.Sprite.classInstance = this;
     return this;
   }
 
-  (0, _createClass2.default)(GameSprite, [{
+  _createClass(GameSprite, [{
     key: "onPointerDown",
     value: function onPointerDown(fn) {
       var $this = this;
@@ -1480,11 +1456,12 @@ function () {
       });
     }
   }]);
+
   return GameSprite;
 }();
 
 exports.GameSprite = GameSprite;
-},{"@babel/runtime/helpers/classCallCheck":"node_modules/@babel/runtime/helpers/classCallCheck.js","@babel/runtime/helpers/createClass":"node_modules/@babel/runtime/helpers/createClass.js"}],"src/sectors/manager.js":[function(require,module,exports) {
+},{}],"src/sectors/manager.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1940,10 +1917,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.PlayerShip = void 0;
 
-var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
-
-var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
-
 var _update = require("../states/update");
 
 var _create = require("../states/create");
@@ -1958,7 +1931,11 @@ var _Inventory = require("./systems/modules/Inventory");
 
 var _Engine = require("./systems/modules/Engine");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var isTouch = false;
 
@@ -1969,7 +1946,9 @@ function () {
     var x = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     var y = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
     var texture = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "";
-    (0, _classCallCheck2.default)(this, PlayerShip);
+
+    _classCallCheck(this, PlayerShip);
+
     this.Sprite = Game.physics.add.sprite(x, y, texture);
     this.Sprite.classInstance = this;
     this.Sprite.setOrigin(0.5);
@@ -2021,7 +2000,7 @@ function () {
     return this;
   }
 
-  (0, _createClass2.default)(PlayerShip, [{
+  _createClass(PlayerShip, [{
     key: "toolButtonDown",
     value: function toolButtonDown() {
       this.selectedTool.setActive(true);
@@ -2096,6 +2075,7 @@ function () {
       } else {}
     }
   }]);
+
   return PlayerShip;
 }();
 
@@ -2120,7 +2100,7 @@ function moveHandler(Game) {
   } // this.desiredAngle = false; // since player controlled by keys, no need
 
 }
-},{"@babel/runtime/helpers/classCallCheck":"node_modules/@babel/runtime/helpers/classCallCheck.js","@babel/runtime/helpers/createClass":"node_modules/@babel/runtime/helpers/createClass.js","../states/update":"src/states/update.js","../states/create":"src/states/create.js","../ui/keyboard":"src/ui/keyboard.js","./tools/miningLaser":"src/classes/tools/miningLaser.js","./tools/navigator":"src/classes/tools/navigator.js","./systems/modules/Inventory":"src/classes/systems/modules/Inventory.js","./systems/modules/Engine":"src/classes/systems/modules/Engine.js"}],"src/ui/debugger.js":[function(require,module,exports) {
+},{"../states/update":"src/states/update.js","../states/create":"src/states/create.js","../ui/keyboard":"src/ui/keyboard.js","./tools/miningLaser":"src/classes/tools/miningLaser.js","./tools/navigator":"src/classes/tools/navigator.js","./systems/modules/Inventory":"src/classes/systems/modules/Inventory.js","./systems/modules/Engine":"src/classes/systems/modules/Engine.js"}],"src/ui/debugger.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2279,6 +2259,7 @@ var _generalVariables = require("../generalVariables");
 
 function generateVirtualJoystick() {
   var joystick = yy.yengine.ui.VirtualJoystick({
+    parent: $("body"),
     zIndex: 15,
     height: _generalVariables.uiDimensions.map.height + 3,
     width: _generalVariables.uiDimensions.map.width + 3,
@@ -2825,7 +2806,7 @@ function toggleFullScreen() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = main;
+exports.main = main;
 exports.getGameReference = getGameReference;
 exports.Game = void 0;
 
@@ -3012,18 +2993,16 @@ function getGameReference() {
 var global = arguments[3];
 "use strict";
 
-var _main = _interopRequireDefault(require("./src/main"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _main = require("./src/main.js");
 
 (function (global) {
   if (global.infinimy !== undefined) {
     throw Error("myBundle variable already defined");
   }
 
-  global.infinimy = _main.default;
+  global.infinimy = _main.main;
 }).call(void 0, typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {});
-},{"./src/main":"src/main.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./src/main.js":"src/main.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -3050,7 +3029,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59748" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41635" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

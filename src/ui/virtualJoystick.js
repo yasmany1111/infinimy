@@ -4,6 +4,7 @@ import { uiDimensions } from "../generalVariables";
 export function generateVirtualJoystick() {
 
     var joystick = yy.yengine.ui.VirtualJoystick({
+        parent: $("body"),
         zIndex: 15,
         height: uiDimensions.map.height + 3,
         width: uiDimensions.map.width + 3,

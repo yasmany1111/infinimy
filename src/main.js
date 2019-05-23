@@ -46,8 +46,8 @@ async function loadGameData(callback) {
 String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
-export default async function main() {
-    
+export async function main() {
+
     $("#root").css("overflow", "hidden");
     $("#root").addClass("no-select");
     $("body").css("overflow", "hidden");
